@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'E agora?',
         theme: ThemeData(
-            accentColor: Colors.blue[700],
+            accentColor: Colors.cyan[800],
             primaryColor: Colors.white,
             hintColor: Colors.black,
             appBarTheme: AppBarTheme(

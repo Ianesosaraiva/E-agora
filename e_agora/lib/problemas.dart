@@ -1,3 +1,4 @@
+import 'package:e_agora/armengue.dart';
 import 'package:e_agora/data/data_alert.dart';
 import 'package:e_agora/ocorrencia.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,8 @@ class Problemas extends StatelessWidget {
     final primaryColor = Theme.of(context).primaryColor;
     final hintColor = Theme.of(context).hintColor;
 
+    final a = Colors.cyan[400];
+
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
     ScreenUtil.instance =
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
@@ -21,8 +24,17 @@ class Problemas extends StatelessWidget {
       children: <Widget>[
         InkWell(
           child: Card(
-            color: accentColor, //Colors.green[600],
+            color: Colors.cyan[200], //accentColor,
             child: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                Colors.cyan[200],
+                Colors.cyan[300],
+                Colors.cyan[400],
+                Colors.cyan[500],
+                Colors.cyan[600],
+                Colors.cyan[800],
+              ])),
               padding: EdgeInsets.all(20),
               child: Row(
                 children: <Widget>[
@@ -35,10 +47,13 @@ class Problemas extends StatelessWidget {
                     padding: EdgeInsets.only(left: 10),
                     child: Text(
                       data.titulo,
-                      style: TextStyle(color: primaryColor, fontSize: 25),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 25),
                     ),
                   ),
-                  Spacer()
+                  Spacer(),
                 ],
               ),
             ),
@@ -50,8 +65,17 @@ class Problemas extends StatelessWidget {
         ),
         InkWell(
           child: Card(
-            color: accentColor, //Colors.grey,
+            color: Colors.cyan[300], //accentColor, //Colors.grey,
             child: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                Colors.cyan[200],
+                Colors.cyan[300],
+                Colors.cyan[400],
+                Colors.cyan[500],
+                Colors.cyan[600],
+                Colors.cyan[800],
+              ])),
               padding: EdgeInsets.all(20),
               child: Row(
                 children: <Widget>[
@@ -64,7 +88,10 @@ class Problemas extends StatelessWidget {
                     padding: EdgeInsets.only(left: 10),
                     child: Text(
                       "Violência",
-                      style: TextStyle(color: primaryColor, fontSize: 25),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 25),
                     ),
                   ),
                   Spacer(),
@@ -72,11 +99,23 @@ class Problemas extends StatelessWidget {
               ),
             ),
           ),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Armengue()));
+          },
         ),
         Card(
-          color: accentColor, //Colors.red[600],
+          color: Colors.cyan[900], //Colors.red[600],
           child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+              Colors.cyan[200],
+              Colors.cyan[300],
+              Colors.cyan[400],
+              Colors.cyan[500],
+              Colors.cyan[600],
+              Colors.cyan[800],
+            ])),
             padding: EdgeInsets.all(20),
             child: Row(
               children: <Widget>[
@@ -89,7 +128,10 @@ class Problemas extends StatelessWidget {
                   padding: EdgeInsets.only(left: 10),
                   child: Text(
                     "Assédio",
-                    style: TextStyle(color: primaryColor, fontSize: 25),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 25),
                   ),
                 ),
                 Spacer(),
@@ -100,6 +142,15 @@ class Problemas extends StatelessWidget {
         Card(
           color: accentColor, //Colors.orange,
           child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+              Colors.cyan[200],
+              Colors.cyan[300],
+              Colors.cyan[400],
+              Colors.cyan[500],
+              Colors.cyan[600],
+              Colors.cyan[800],
+            ])),
             padding: EdgeInsets.all(20),
             child: Row(
               children: <Widget>[
@@ -112,7 +163,10 @@ class Problemas extends StatelessWidget {
                   padding: EdgeInsets.only(left: 10),
                   child: Text(
                     "Acidente",
-                    style: TextStyle(color: primaryColor, fontSize: 25),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 25),
                   ),
                 ),
                 Spacer(),

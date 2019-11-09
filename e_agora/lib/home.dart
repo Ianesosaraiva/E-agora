@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:e_agora/noticias.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_agora/data/data_alert.dart';
@@ -19,6 +20,7 @@ class _HomeState extends State<Home> {
     final accentColor = Theme.of(context).accentColor;
     final primaryColor = Theme.of(context).primaryColor;
     final hintColor = Theme.of(context).hintColor;
+    final a = Colors.cyan[400];
 
     void alert() {
       showDialog(
@@ -97,6 +99,14 @@ class _HomeState extends State<Home> {
                       "https://maps.app.goo.gl/?link=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x716054f9d62acaf:0xf05527e6fa248c6d?utm_source%3Dmstt_1&apn=com.google.android.apps.maps&afl=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x716054f9d62acaf:0xf05527e6fa248c6d?utm_source%3Dmstt_1&ibi=com.google.Maps&ius=comgooglemapsurl&isi=585027354&ifl=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x716054f9d62acaf:0xf05527e6fa248c6d?utm_source%3Dmstt_1");
                 }),
             ListTile(
+                title: Text("Delegacia da Mulher",
+                    style: TextStyle(color: hintColor)),
+                leading: Icon(Icons.local_hospital, color: Colors.red[700]),
+                onTap: () {
+                  launch(
+                      "https://maps.app.goo.gl/?link=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x7163e112ef92b1b:0xe4f7742062a94e13?utm_source%3Dmstt_1&apn=com.google.android.apps.maps&afl=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x7163e112ef92b1b:0xe4f7742062a94e13?utm_source%3Dmstt_1&ibi=com.google.Maps&ius=comgooglemapsurl&isi=585027354&ifl=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x7163e112ef92b1b:0xe4f7742062a94e13?utm_source%3Dmstt_1");
+                }),
+            ListTile(
                 title: Text("Defensoria Pública",
                     style: TextStyle(color: hintColor)),
                 leading: Icon(Icons.gavel, color: accentColor),
@@ -104,7 +114,7 @@ class _HomeState extends State<Home> {
                   launch("https://maps.app.goo.gl/TtUndz67oupNCZac9");
                 }),
             ListTile(
-                title: Text("Conselho tutelar",
+                title: Text("Conselho Tutelar",
                     style: TextStyle(color: hintColor)),
                 leading: Icon(Icons.face, color: Colors.purple),
                 onTap: () {
@@ -119,7 +129,7 @@ class _HomeState extends State<Home> {
                       "https://maps.app.goo.gl/?link=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x7163e112ef92b1b:0xe4f7742062a94e13?utm_source%3Dmstt_1&apn=com.google.android.apps.maps&afl=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x7163e112ef92b1b:0xe4f7742062a94e13?utm_source%3Dmstt_1&ibi=com.google.Maps&ius=comgooglemapsurl&isi=585027354&ifl=https://www.google.com/maps/place//data%3D!4m2!3m1!1s0x7163e112ef92b1b:0xe4f7742062a94e13?utm_source%3Dmstt_1");
                 }),
             Divider(
-              height: 20,
+              height: 10,
             ),
             ListTile(
                 title: Text("Sobre", style: TextStyle(color: hintColor)),
@@ -183,13 +193,31 @@ class _HomeState extends State<Home> {
                                       },
                                     ),
                                     Spacer(),
-                                    Container(
-                                      padding: EdgeInsets.only(left: 10),
-                                      child: Text(
-                                        "|",
-                                        style: TextStyle(
-                                            color: primaryColor, fontSize: 50),
-                                      ),
+                                    InkWell(
+                                      child: Container(
+                                          padding: EdgeInsets.only(left: 10),
+                                          child: Column(
+                                            children: <Widget>[
+                                              Icon(
+                                                Icons.subtitles,
+                                                color: primaryColor,
+                                                size: 60,
+                                              ),
+                                              // Text(
+                                              //   "Noticias",
+                                              //   style: TextStyle(
+                                              //       color: primaryColor,
+                                              //       fontSize: 20),
+                                              // ),
+                                            ],
+                                          )),
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Noticias()));
+                                      },
                                     ),
                                     Spacer(),
                                     InkWell(
