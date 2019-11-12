@@ -1,5 +1,5 @@
-import 'package:e_agora/armengue.dart';
 import 'package:e_agora/data/data_alert.dart';
+import 'package:e_agora/ocorreViolencia.dart';
 import 'package:e_agora/ocorrencia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -101,7 +101,7 @@ class Problemas extends StatelessWidget {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Armengue()));
+                MaterialPageRoute(builder: (context) => OcorreViolencia()));
           },
         ),
         Card(
